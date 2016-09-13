@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Almeirim</string>
+    <string name="title_activity_report_list">ReportListActivity</string>
+</resources>
