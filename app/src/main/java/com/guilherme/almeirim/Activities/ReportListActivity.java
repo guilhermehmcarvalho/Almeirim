@@ -184,11 +184,14 @@ public class ReportListActivity extends AppCompatActivity {
             model.setFuncionario(funcionario);
             model.setNumRomaneio(romaneio);
             model.setProjectId(this.project.getId());
-            model.setDataDigitacao("");
-            new DBPatio(this).addRomaneio(model);
+            model.setDataDigitacao("11");
+            DBPatio dbPatio = new DBPatio(this);
+            dbPatio.addRomaneio(model);
 
             Intent newPatioIntent = new Intent(ReportListActivity.this, NewPatioActivity.class);
             ReportListActivity.this.startActivity(newPatioIntent);
+
+            loadPatio();
         }
     }
 }

@@ -30,13 +30,13 @@ public class DBPatio extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String SQL = "CREATE TABLE " + TABLE_PATIO + "(" +
+        String SQL = "CREATE TABLE " + DBConfig.DATABASE_NAME + "." + TABLE_PATIO + "(" +
                 KEY_ID + " INTEGER PRIMARY KEY," +
                 KEY_PROJECT + " INTEGER, " +
                 KEY_DATA + " TEXT, " +
-                KEY_ROMANEIO + "INTEGER, " +
-                KEY_EMPLOYEE + "TEXT " +
-        ")";
+                KEY_ROMANEIO + " INTEGER, " +
+                KEY_EMPLOYEE + " TEXT" +
+                ")";
         db.execSQL(SQL);
     }
 
@@ -53,7 +53,7 @@ public class DBPatio extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put(KEY_ID, patio.getPatioId());
+        //values.put(KEY_ID, patio.getPatioId());
         values.put(KEY_PROJECT, patio.getProjectId());
         values.put(KEY_DATA, patio.getDataDigitacao());
         values.put(KEY_ROMANEIO, patio.getNumRomaneio());

@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import com.guilherme.almeirim.DB.DBProject;
+import com.guilherme.almeirim.DB.DatabaseHelper;
 import com.guilherme.almeirim.DB.Models.ProjectModel;
 import com.guilherme.almeirim.R;
 
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        new DatabaseHelper(this).getWritableDatabase();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -99,7 +102,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadProjects(){
         projects = new DBProject(this).getAllProjects();
-
         noProjects = projects.size() == 0;
 
         if (noProjects) {
