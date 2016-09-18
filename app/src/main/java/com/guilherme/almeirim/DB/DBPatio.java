@@ -30,25 +30,15 @@ public class DBPatio extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String SQL = "CREATE TABLE " + DBConfig.DATABASE_NAME + "." + TABLE_PATIO + "(" +
-                KEY_ID + " INTEGER PRIMARY KEY," +
-                KEY_PROJECT + " INTEGER, " +
-                KEY_DATA + " TEXT, " +
-                KEY_ROMANEIO + " INTEGER, " +
-                KEY_EMPLOYEE + " TEXT" +
-                ")";
-        db.execSQL(SQL);
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Drop older table if existed
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_PATIO);
-        // Creating tables again
-        onCreate(db);
+
     }
 
-    // Adding new project
+    // Adding new patio
     public void addRomaneio(PatioModel patio) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();

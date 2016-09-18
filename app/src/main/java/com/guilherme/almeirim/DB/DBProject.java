@@ -29,17 +29,10 @@ public class DBProject extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_PROJECTS + "("
-        + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT)";
-        db.execSQL(CREATE_CONTACTS_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Drop older table if existed
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_PROJECTS);
-        // Creating tables again
-        onCreate(db);
     }
 
     // Adding new project

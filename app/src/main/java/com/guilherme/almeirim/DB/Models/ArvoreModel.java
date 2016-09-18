@@ -11,6 +11,11 @@ public class ArvoreModel {
     private String especie;
     private int idProjeto;
 
+    @Override
+    public String toString() {
+        return placa + " " + UT + " " + especie + " " + cap;
+    }
+
     public int getId() {
         return id;
     }
