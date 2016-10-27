@@ -44,12 +44,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textArvore"
-                    android:hint="Arvore" />
+                    android:inputType="number"
+                    android:hint="Placa árvore"
+                    android:maxLines="1" />
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textLetra"
-                    android:hint="Letra" />
+                    android:hint="Letra"
+                    android:maxLines="1"
+                    android:inputType="textCapCharacters" />
             </LinearLayout>
 
             <LinearLayout
@@ -64,12 +68,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="UT"
+                    android:freezesText="true"
                     android:id="@+id/labelUT"
                     android:textSize="20dp" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Espécie"
+                    android:freezesText="true"
                     android:id="@+id/labelEspecie"
                     android:textSize="20dp" />
 
@@ -96,31 +102,41 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textComprimento"
-                    android:hint="Comprimento" />
+                    android:hint="Comprimento"
+                    android:maxLines="1"
+                    android:inputType="numberDecimal" />
 
                 <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textRodo"
-                android:hint="Rodo" />
+                android:hint="Rodo"
+                    android:maxLines="1"
+                    android:inputType="numberDecimal" />
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textDiam1"
-                    android:hint="Diâmetro1" />
+                    android:hint="Diâmetro1"
+                    android:maxLines="1"
+                    android:inputType="numberDecimal" />
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textDiam2"
-                    android:hint="Diâmetro2" />
+                    android:hint="Diâmetro2"
+                    android:maxLines="1"
+                    android:inputType="numberDecimal" />
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textOco"
-                    android:hint="Oco" />
+                    android:hint="Oco"
+                    android:maxLines="1"
+                    android:inputType="numberDecimal" />
             </LinearLayout>
 
             <LinearLayout
@@ -135,6 +151,7 @@
                     android:layout_height="wrap_content"
                     android:text="Vol. geo bruto"
                     android:id="@+id/labelVolGeoBruto"
+                    android:freezesText="true"
                     android:textSize="20dp" />
 
                 <TextView
@@ -142,6 +159,7 @@
                     android:layout_height="wrap_content"
                     android:text="Vol. geo líquido"
                     android:id="@+id/labelVolGeoLiq"
+                    android:freezesText="true"
                     android:textSize="20dp" />
 
                 <TextView
@@ -149,6 +167,7 @@
                     android:layout_height="wrap_content"
                     android:text="Vol. francon bruto"
                     android:id="@+id/labelVolFrancBruto"
+                    android:freezesText="true"
                     android:textSize="20dp" />
 
                 <TextView
@@ -156,6 +175,7 @@
                     android:layout_height="wrap_content"
                     android:text="Vol. francon líquido"
                     android:id="@+id/labelVolFrancLiq"
+                    android:freezesText="true"
                     android:textSize="20dp" />
 
                 <TextView
@@ -163,6 +183,7 @@
                     android:layout_height="wrap_content"
                     android:text="Oco"
                     android:id="@+id/labelOco"
+                    android:freezesText="true"
                     android:textSize="20dp" />
             </LinearLayout>
         </LinearLayout>

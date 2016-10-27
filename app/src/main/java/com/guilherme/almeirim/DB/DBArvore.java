@@ -83,4 +83,42 @@ public class DBArvore extends SQLiteOpenHelper {
         // return contact list
         return arvoreList;
     }
+
+    public ArvoreModel getArvoreWithPlaca(int placa){
+        ArvoreModel retArvore = null;
+
+        try {
+            String selectQuery = "SELECT * FROM " + TABLE_ARVORE +
+                    " WHERE " + KEY_PLACA + " = " + placa;
+            SQLiteDatabase db = this.getWritableDatabase();
+            Cursor cursor = db.rawQuery(selectQuery, null);
+            // looping through all rows and adding to list
+            if (cursor.moveToFirst()) {
+                do {
+                    ArvoreModel arvore = new ArvoreModel();
+                    arvore.setId(Integer.parseInt(cursor.getString(0)));
+                    arvore.setPlaca(Integer.parseInt(cursor.getString(1)));
+                    arvore.setUT(Integer.parseInt(cursor.getString(2)));
+                    arvore.setCap(Integer.parseInt(cursor.getString(3)));
+                    arvore.setEspecie(cursor.getString(4));
+                    arvore.setIdProjeto(Integer.parseInt(cursor.getString(5)));
+
+                    retArvore = arvore;
+                } while (cursor.moveToNext());
+            }
+        }catch (Exception e) {}
+
+        return retArvore;
+    }
+
+    public Boolean deleteArvoreWithPlaca(int placa){
+        ArvoreModel retArvore = null;
+
+        try {
+            SQLiteDatabase db = this.getWritableDatabase();
+            return db.delete(TABLE_ARVORE, KEY_PLACA + " = " + placa, null) > 0;
+        }catch (Exception e) {}
+
+        return false;
+    }
 }

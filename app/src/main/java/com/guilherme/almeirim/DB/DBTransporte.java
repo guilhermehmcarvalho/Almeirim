@@ -59,7 +59,7 @@ public class DBTransporte extends SQLiteOpenHelper {
                     transp.setIdRomaneio(Integer.parseInt(cursor.getString(2)));
                     transp.setMotorista(cursor.getString(3));
                     transp.setPlaca(cursor.getString(4));
-                    transp.setProjectId(Integer.parseInt(cursor.getString(5)));
+                    transp.setProjectId(projectId);
 
                     transpList.add(transp);
                 } while (cursor.moveToNext());
